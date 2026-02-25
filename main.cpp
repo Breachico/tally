@@ -15,6 +15,10 @@ int main(int argc, char** argv){
   }
   else if( argc == 2 && atoi(argv[1])){ // argument is provided that can convert character -> integer
     options = atoi(argv[1]); // convert character argument into integer
+    if (options > 99 || options < 1) {
+      std::cerr << "usage ./tally [<arg>]\n    <arg> - number of parties to tally (1-99). Default = 1." << endl;
+      return -1;
+    }
   }
   else{
     ongoing = false;
